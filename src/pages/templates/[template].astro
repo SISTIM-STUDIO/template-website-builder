@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { templateOptions } from "../../content/site";
+
+export function getStaticPaths() {
+  return templateOptions.map((template) => ({ params: { template: template.slug }, props: { template } }));
+}
+
+const { template } = Astro.props;
+const benefits = [
+  "A clear introduction and value proposition",
+  "Sections shaped around the audience's needs",
+  "A visible next step for visitors",
+];
+---
+<BaseLayout title={template.name} description={template.description}>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">{template.eyebrow}</span>
+      <h1>{template.name}</h1>
+      <p class="hero-copy">{template.description}</p>
+      <div class="actions">
+        <a class="button" href="/about/">{template.cta}</a>
+        <a class="button secondary" href="/">Back to overview</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="feature-band">
+        <div>
+          <span class="eyebrow">Starter page preview</span>
+          <h2>Build the story around your audience.</h2>
+          <p>This is a functional starter page for the {template.name.toLowerCase()} direction. The next stage is to tailor sections, images, and calls to action to a specific client brief.</p>
+        </div>
+        <ul class="feature-list">
+          {benefits.map((benefit) => <li>{benefit}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
