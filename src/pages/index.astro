@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site, templateOptions } from "../content/site";
+---
+<BaseLayout title={site.name} description={site.description}>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Reusable website foundation</span>
+      <h1>Good websites start with a clear foundation.</h1>
+      <p class="hero-copy">A lightweight starting point for business websites, landing pages, outdoor adventures, small stores, and editorial blogs. Change the content first; customize the design when you're ready.</p>
+      <div class="actions">
+        <a class="button" href="#templates">Explore the templates <span aria-hidden="true">&nbsp;↗</span></a>
+        <a class="button secondary" href="/about/">How this starter works</a>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="templates">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Choose a starting point</span>
+          <h2>Five flexible website directions.</h2>
+        </div>
+        <p>Each template is a starter, ready to be adapted to a real brief.</p>
+      </div>
+      <div class="template-grid">
+        {templateOptions.map((template, index) => (
+          <article class="template-card">
+            <span class="number">0{index + 1}</span>
+            <h3>{template.name}</h3>
+            <p>{template.description}</p>
+            <a class="card-link" href={`/templates/${template.slug}/`}>View template <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="feature-band">
+        <div>
+          <span class="eyebrow">Made for iteration</span>
+          <h2>Keep content separate from layout.</h2>
+          <p>Brand name, navigation, and starter template details live in a small content file. That makes future client websites easier to adapt without searching through every page.</p>
+        </div>
+        <ul class="feature-list">
+          <li>Responsive layout for mobile and desktop</li>
+          <li>Shared layout and reusable design styles</li>
+          <li>Starter metadata for search engines</li>
+          <li>Build and deployment workflow foundation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
