@@ -1,14 +1,14 @@
 # Website Builder Foundation
 
-A reusable Astro starter for lightweight, responsive websites. This foundation includes five starter directions: company profile, landing page, trekking/adventure, small store, and blog.
+A reusable Astro starter for lightweight, responsive websites. The development foundation provides five starter directions: company profile, landing page, trekking/adventure, small store, and blog.
 
-## Current status
+## Project status
 
-This is the development foundation. Review and test changes on the `dev/website-builder-foundation` branch before merging into `main`. Sample brand details and copy are placeholders, not a finished client website.
+This is a development starter, not a complete visual no-code editor or a finished client website. Build validation runs through GitHub Actions. Review the development branch and pull request before merging into `main`.
 
 ## Requirements and local development
 
-- Node.js 22 or another supported Node.js release
+- Node.js 22 or another compatible supported Node.js release
 - npm
 
 ```sh
@@ -25,50 +25,54 @@ npm run build
 npm run preview
 ```
 
-The generated website is in `dist/`. A successful build is required before release.
+The generated website is in `dist/`.
 
-## Edit the sample content
+## Edit the content
 
-Start with `src/content/site.ts` to update the website name, tagline, description, contact details, navigation, and starter-template descriptions.
+- `src/content/site.ts`: website name, description, contact details, navigation, and template labels.
+- `src/content/template-details.ts`: sample section headings, text, and calls to action for each template.
+- `src/layouts/BaseLayout.astro`: shared page structure and metadata.
+- `src/styles/global.css`: design tokens, layout, typography, and responsive styles.
 
-- Shared page structure: `src/layouts/BaseLayout.astro`
-- Global design and responsive styles: `src/styles/global.css`
-- Homepage: `src/pages/index.astro`
-- About page: `src/pages/about.astro`
-- Five starter pages: `src/pages/templates/[template].astro`
+Indonesian documentation:
+- [Panduan Konten](docs/CONTENT-GUIDE-ID.md)
+- [Template Brief Klien](docs/CLIENT-BRIEF-TEMPLATE-ID.md)
 
-## Starter templates
+## Starter routes
 
 - `/templates/company/` — company profile
 - `/templates/landing/` — landing page
 - `/templates/trekking/` — trekking and adventure
 - `/templates/store/` — small store
 - `/templates/blog/` — blog and journal
+- `/404.html` — not-found page for static hosting
 
-These are working starter page directions, not yet full client-specific websites or a visual no-code editor.
+These routes contain editable example copy and section structures. They still need real client copy, approved images, working contact links, and final visual review.
 
-## GitHub Pages
+## GitHub Actions and Pages
 
-The included workflow builds and deploys changes pushed to `main`. Astro is configured to use the repository subpath `/template-website-builder` in GitHub Actions builds.
+- `.github/workflows/ci.yml` runs a production build for pull requests into `main` and pushes to development branches matching `dev/**`.
+- `.github/workflows/deploy.yml` builds and deploys from `main`.
 
-Before the first deployment, open **Settings → Pages** and select **GitHub Actions** as the publishing source. Development-branch changes are not deployed automatically; review and merge them into `main` only when ready.
+Before first deployment, open **Settings → Pages** and select **GitHub Actions** as the publishing source. The site base path is configured for this repository's GitHub Pages URL. If this project is copied to a differently named repository or custom domain, review `astro.config.mjs` and update the site/base configuration.
+
+## Not included yet
+
+- Visual drag-and-drop editor or admin dashboard
+- CMS or browser-based content editing
+- Booking or contact forms that store and deliver submissions
+- E-commerce cart, stock management, or payment processing
+- Automatic sitemap, structured data, analytics, and Search Console integration
+- Client-specific finished imagery or copy
 
 ## Release checklist
 
-- [ ] Replace all placeholder brand and contact information
-- [ ] Write unique page titles and descriptions
-- [ ] Add original optimized images and useful alt text
-- [ ] Test mobile and desktop layouts
-- [ ] Verify navigation links and calls to action
-- [ ] Run `npm run build` successfully
+- [ ] Replace sample brand, copy, contact details, and calls to action
+- [ ] Add optimized images and meaningful alt text
+- [ ] Check all navigation and links on mobile and desktop
+- [ ] Verify titles and descriptions per page
+- [ ] Confirm any claims, prices, itineraries, and policies with the client
+- [ ] Run the production build successfully
 - [ ] Review accessibility and performance
 - [ ] Configure GitHub Pages and verify the live URL
-- [ ] Add sitemap, canonical URLs, structured data, and Search Console setup in a later iteration
-
-## Next development stages
-
-1. Add a clear client-brief and content workflow.
-2. Expand each starter direction into complete section-based templates.
-3. Add per-client image, SEO, and navigation configuration.
-4. Add automated build checks for pull requests.
-5. Document a no-code-friendly workflow for creating client websites.
+- [ ] Obtain client approval before launch
