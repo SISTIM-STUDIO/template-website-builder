@@ -1,0 +1,45 @@
+---
+import { site } from "../content/site";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = site.name, description = site.description } = Astro.props;
+const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f7f2" />
+    <title>{pageTitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label={`${site.name} home`}>
+          <span class="brand-mark">S</span>
+          <span>{site.name}</span>
+        </a>
+        <nav aria-label="Main navigation">
+          {site.navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© {new Date().getFullYear()} {site.name}</p>
+        <p>Built to be adapted, not rebuilt from scratch.</p>
+      </div>
+    </footer>
+  </body>
+</html>
