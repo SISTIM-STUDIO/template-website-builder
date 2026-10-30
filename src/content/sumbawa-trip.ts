@@ -29,7 +29,7 @@ export const journeys = [
     includes: ["Detail transportasi dan kendaraan 4WD menunggu konfirmasi operator", "Rincian akomodasi dan konsumsi perlu ditetapkan"],
     excludes: ["Tiket pesawat", "Pengeluaran pribadi", "Item yang belum dinyatakan dalam paket final"],
     note: "Durasi 2D1N mengikuti brief terbaru. Materi operasional lama memiliki rincian yang tidak sepenuhnya cocok dengan durasi ini; itinerary final harus disetujui sebelum dijual.",
-    price: "Harga akan dikonfirmasi",
+    price: "Minta penawaran",
   },
   {
     id: "whale-shark",
@@ -91,7 +91,7 @@ export const journeys = [
     includes: ["Transportasi lokal sesuai program", "Private boat sesuai paket final", "Guide dan aktivitas sesuai rincian yang disepakati"],
     excludes: ["Tiket pesawat", "Laundry dan pengeluaran pribadi", "Item di luar paket final"],
     note: "Foto di prototipe ini adalah referensi sementara. Ganti dengan foto asli milik SUMBAWA TRIP sebelum peluncuran.",
-    price: "Rp 2.925.000/pax (referensi lama untuk 2 pax; wajib konfirmasi ulang)",
+    price: "Minta penawaran",
   },
   {
     id: "discovery",
