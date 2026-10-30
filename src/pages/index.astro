@@ -1,56 +1,90 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { site, templateOptions } from "../content/site";
-const base = import.meta.env.BASE_URL;
+import { sumbawaBrand } from "../content/sumbawa-trip";
+import journeys from "../content/sumbawa-trip-packages.json";
+import "../styles/sumbawa-trip.css";
+const wa = (message: string) => `https://wa.me/${sumbawaBrand.whatsapp}?text=${encodeURIComponent(message)}`;
 ---
-<BaseLayout title={site.name} description={site.description}>
-  <section class="hero">
-    <div class="container">
-      <span class="eyebrow">Reusable website foundation</span>
-      <h1>Good websites start with a clear foundation.</h1>
-      <p class="hero-copy">A lightweight starting point for business websites, landing pages, outdoor adventures, small stores, and editorial blogs. Change the content first; customize the design when you're ready.</p>
-      <div class="actions">
-        <a class="button" href={`${base}#templates`}>Explore the templates <span aria-hidden="true">&nbsp;↗</span></a>
-        <a class="button secondary" href={`${base}about/`}>How this starter works</a>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="templates">
-    <div class="container">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">Choose a starting point</span>
-          <h2>Five flexible website directions.</h2>
-        </div>
-        <p>Each template is a starter, ready to be adapted to a real brief.</p>
-      </div>
-      <div class="template-grid">
-        {templateOptions.map((template, index) => (
-          <article class="template-card">
-            <span class="number">0{index + 1}</span>
-            <h3>{template.name}</h3>
-            <p>{template.description}</p>
-            <a class="card-link" href={`${base}templates/${template.slug}/`}>View template <span aria-hidden="true">→</span></a>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="feature-band">
-        <div>
-          <span class="eyebrow">Made for iteration</span>
-          <h2>Keep content separate from layout.</h2>
-          <p>Brand name, navigation, and starter template details live in a small content file. That makes future client websites easier to adapt without searching through every page.</p>
-        </div>
-        <ul class="feature-list">
-          <li>Responsive layout for mobile and desktop</li>
-          <li>Shared layout and reusable design styles</li>
-          <li>Starter metadata for search engines</li>
-          <li>Build and deployment workflow foundation</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="SUMBAWA TRIP — Your Gateway to Sumbawa Adventure. Jelajahi Tambora, Pulau Moyo, Teluk Saleh dan destinasi Sumbawa." />
+<meta name="theme-color" content="#0d1b18" /><meta property="og:type" content="website" /><meta property="og:title" content="SUMBAWA TRIP — Your Gateway to Sumbawa Adventure" /><meta property="og:description" content="Jelajahi Tambora, Pulau Moyo, Teluk Saleh dan destinasi Sumbawa bersama SUMBAWA TRIP." />
+<title>SUMBAWA TRIP — Paket Wisata dan Petualangan Sumbawa</title>
+<script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@type": "TravelAgency", name: sumbawaBrand.name, description: "Paket wisata, petualangan, dan perjalanan khusus di Sumbawa, Nusa Tenggara Barat.", telephone: "+6281246203185", areaServed: "Sumbawa, Nusa Tenggara Barat, Indonesia" })}></script>
+</head>
+<body class="st-page">
+<a class="st-skip" href="#main">Lewati ke konten</a>
+<script type="application/json" id="st-package-data" set:html={JSON.stringify(journeys.map(({id,title,duration})=>({id,title,duration})))}></script>
+<div class="st-home" id="top">
+<header class="st-nav" id="st-nav">
+<a class="st-brand" href="#top">SUMBAWA TRIP<small>{sumbawaBrand.tagline}</small></a>
+<button class="st-menu-button" type="button" aria-expanded="false" aria-controls="st-links">Menu ☰</button>
+<nav class="st-links" id="st-links" aria-label="Navigasi utama">
+<a href="#experiences">Experiences</a><a href="#journeys">Journeys</a><a href="#gallery">Gallery</a><a href="#about">About</a><a class="st-nav-cta" href="#booking">Plan My Trip</a>
+</nav>
+</header>
+<main id="main">
+<section class="st-hero">
+<div class="st-hero-content"><div class="st-eyebrow">Explore · Experience · Remember</div>
+<h1>Discover<br />Sumbawa.</h1>
+<p>Dari Gunung Tambora, pulau-pulau kecil hingga pengalaman bertemu hiu paus di Teluk Saleh. SUMBAWA TRIP mengajakmu menikmati Sumbawa melalui perjalanan yang nyata, personal, dan tidak terburu-buru.</p>
+<a class="st-btn st-btn-gold" href="#journeys">Explore Journeys</a><a class="st-btn st-btn-ghost" href="#booking">Plan My Trip</a>
+</div>
+</section>
+<section class="st-section st-intro"><div class="st-head"><div class="st-eyebrow">The island, your way</div><h2>Adventure feels different here.</h2><p>Sumbawa masih punya ruang untuk perjalanan yang terasa liar, luas, dan autentik. Kita mulai dari materi destinasi yang benar-benar tersedia, lalu mengembangkannya dengan data yang bisa diverifikasi.</p></div></section>
+<section class="st-section" id="experiences"><div class="st-head"><div class="st-eyebrow">Explore</div><h2>Experience Sumbawa</h2><p>Empat pintu masuk utama untuk menjelajahi koleksi perjalanan SUMBAWA TRIP.</p></div>
+<div class="st-experiences">
+<a class="st-exp st-exp-tambora" href="#journeys"><div class="st-label"><div class="st-eyebrow">Volcano</div><h3>Tambora Adventure</h3></div></a>
+<a class="st-exp st-exp-whale" href="#journeys"><div class="st-label"><div class="st-eyebrow">Marine</div><h3>Whale Shark</h3></div></a>
+<a class="st-exp st-exp-moyo" href="#journeys"><div class="st-label"><div class="st-eyebrow">Island</div><h3>Moyo Escape</h3><div class="st-placeholder-note">Foto asli Moyo belum tersedia pada aset prototipe ini.</div></div></a>
+<a class="st-exp st-exp-offroad" href="#journeys"><div class="st-label"><div class="st-eyebrow">4WD Adventure</div><h3>Tambora Offroad</h3></div></a>
+</div></section>
+<section class="st-section st-dark" id="journeys"><div class="st-head"><div class="st-eyebrow">Curated journeys</div><h2>Signature Journeys</h2><p>Pilih perjalanan untuk melihat gambaran itinerary, layanan, harga, dan informasi yang masih perlu dikonfirmasi.</p></div>
+<div class="st-packs">
+{journeys.slice(0,4).map((journey) => <article class="st-pack">
+<a class="st-pack-pic" href={`#trip-${journey.id}`} style={`--pack-image:url("${journey.image}")`} aria-label={`Lihat ${journey.title}`}></a>
+<div class="st-pack-copy"><small>{journey.duration} · {journey.category}</small><h3>{journey.title}</h3><p>{journey.short}</p>{journey.route.split(" · ").map((tag) => <span class="st-tag">{tag}</span>)}<p class="st-price">{journey.price}</p><a class="st-detail-link" href={`#trip-${journey.id}`}>View journey →</a></div>
+</article>)}
+</div>
+{journeys.slice(4).map((journey) => <div class="st-featured-pack"><article class="st-pack">
+<a class="st-pack-pic" href={`#trip-${journey.id}`} style={`--pack-image:url("${journey.image}")`} aria-label={`Lihat ${journey.title}`}></a>
+<div class="st-pack-copy"><small>{journey.duration} · {journey.category}</small><h3>{journey.title}</h3><p>{journey.short}</p>{journey.route.split(" · ").map((tag) => <span class="st-tag">{tag}</span>)}<p class="st-price">{journey.price}</p><a class="st-detail-link" href={`#trip-${journey.id}`}>View journey →</a></div>
+</article></div>)}
+</section>
+<section class="st-why" id="about"><div class="st-why-photo" role="img" aria-label="Lanskap Sumbawa, gambar referensi sementara"></div><div><div class="st-eyebrow">Why Sumbawa Trip</div><h2>Real places.<br />Real journeys.</h2><p>Homepage ini sengaja tidak mengisi kekosongan dengan materi generik. Foto yang sudah tersedia diprioritaskan; informasi yang belum ada diberi status pending atau diverifikasi sebelum dipublikasikan.</p>
+<div class="st-points"><div class="st-point"><b>Authentic Materials</b><span>Foto asli SUMBAWA TRIP menjadi basis visual utama setelah aset V5 dipindahkan.</span></div><div class="st-point"><b>Verified Information</b><span>Detail baru hanya ditambahkan jika sumbernya bisa diverifikasi.</span></div><div class="st-point"><b>Easy to Operate</b><span>Struktur disiapkan agar mudah dikembangkan menjadi website operasional.</span></div></div></div></section>
+<section class="st-section" id="gallery"><div class="st-head"><div class="st-eyebrow">Moments</div><h2>Moments of Sumbawa</h2><p>Galeri prototipe; aset foto V5 perlu dipindahkan ke repositori agar tidak bergantung pada tautan gambar pihak ketiga.</p></div>
+<div class="st-gallery"><div class="st-gallery-item st-g1" aria-label="Tambora"></div><div class="st-gallery-item st-g2" aria-label="Teluk Saleh"></div><div class="st-gallery-item st-g3" aria-label="Pulau Moyo"></div><div class="st-gallery-item st-g4" aria-label="Sumbawa"></div><div class="st-gallery-item st-g5" aria-label="Island escape"></div></div></section>
+
+<section class="st-section st-booking-section" id="booking">
+<div class="st-booking-grid">
+<div class="st-booking-intro"><div class="st-eyebrow">Booking request</div><h2>Let's plan your<br/>Sumbawa journey.</h2><p>Isi informasi dasar perjalanan. Setelah menekan tombol, WhatsApp akan terbuka dengan pesan yang sudah disiapkan untuk tim SUMBAWA TRIP.</p><div class="st-booking-note"><strong>Perlu diketahui</strong><span>Permintaan ini belum menjadi booking terkonfirmasi. Tim kami akan memeriksa tanggal, ketersediaan, harga, dan detail layanan melalui WhatsApp.</span></div></div>
+<form class="st-booking-form" id="st-booking-form" data-whatsapp={sumbawaBrand.whatsapp}>
+<div class="st-form-row"><label>Nama lengkap<input name="name" autocomplete="name" required placeholder="Nama kamu"/></label><label>Nomor WhatsApp<input name="phone" type="tel" autocomplete="tel" required placeholder="08xxxxxxxxxx"/></label></div>
+<div class="st-form-row"><label>Pilih paket wisata<select name="package" id="st-package-select" required><option value="">Pilih paket</option>{journeys.map((journey) => <option value={journey.id}>{journey.title}</option>)}<option value="custom">Perjalanan custom / konsultasi</option></select></label><label>Tanggal mulai<input name="date" type="date" /></label></div>
+<div class="st-form-row"><label>Jumlah peserta<select name="pax" required><option value="">Pilih jumlah</option><option>1 orang</option><option>2 orang</option><option>3 orang</option><option>4 orang</option><option>5 orang</option><option>6–10 orang</option><option>11–20 orang</option><option>Lebih dari 20 orang</option></select></label><label>Jenis perjalanan<select name="tripType"><option>Private trip</option><option>Open trip</option><option>Honeymoon</option><option>Company gathering</option><option>Student expedition</option><option>Custom trip</option></select></label></div>
+<label>Catatan / kebutuhan khusus<textarea name="notes" rows="4" placeholder="Titik penjemputan, bandara, minat, kebutuhan khusus, atau pertanyaan lainnya"></textarea></label>
+<button class="st-btn st-btn-gold st-form-submit" type="submit">Kirim permintaan via WhatsApp ↗</button>
+<p class="st-form-privacy">WhatsApp akan terbuka untuk mengirim detail permintaan ini kepada SUMBAWA TRIP.</p><p class="st-form-feedback" id="st-form-feedback" role="status" aria-live="polite"></p>
+</form></div></section>
+<section class="st-contact" id="contact"><div class="st-eyebrow">Plan your journey</div><h2>Ready to explore<br />Sumbawa?</h2><p>Private trip, honeymoon, company gathering, student expedition, atau rute khusus — konsultasikan perjalanan yang sesuai kebutuhanmu.</p><a class="st-btn st-btn-gold" href={wa("Halo SUMBAWA TRIP, saya ingin konsultasi perjalanan ke Sumbawa. Mohon rekomendasi paket yang sesuai.")} target="_blank" rel="noreferrer">Plan My Trip via WhatsApp ↗</a></section>
+</main>
+<footer class="st-footer"><div class="st-footgrid"><div><a class="st-brand" href="#top">SUMBAWA TRIP<small>{sumbawaBrand.tagline}</small></a><p>Website prototype — SUMBAWA TRIP.</p></div><div><h4>Explore</h4><p><a href="#experiences">Experiences</a></p><p><a href="#journeys">Journeys</a></p><p><a href="#gallery">Gallery</a></p></div><div><h4>Plan</h4><p>Custom Trip</p><p>Booking consultation</p><p>Open Trip</p></div><div><h4>Contact</h4><p>Bima, Nusa Tenggara Barat</p><p>WhatsApp: 0812-4620-3185</p></div></div><div class="st-copyright">© {new Date().getFullYear()} SUMBAWA TRIP. Prototype only.</div></footer>
+</div>
+{journeys.map((journey) => <section class="st-detail-page" id={`trip-${journey.id}`}><div class="st-detail-nav"><a class="st-brand st-brand-dark" href="#top">SUMBAWA TRIP<small>{sumbawaBrand.tagline}</small></a><a class="st-back" href="#journeys">← Back to Journeys</a></div><div class="st-detail-hero" style={`--detail-image:url("${journey.image}")`}><div><div class="st-eyebrow">{journey.category} · {journey.duration}</div><h1>{journey.title}</h1><div class="st-meta">{journey.route.split(" · ").map((tag) => <span>{tag}</span>)}</div></div></div><div class="st-detail-body"><main><h2>{journey.title}</h2><p class="st-detail-intro">{journey.short}</p><div class="st-timeline">{journey.itinerary.map((day) => <div class="st-day"><b>{day.day} — {day.title}</b><p>{day.text}</p></div>)}</div><div class="st-note"><b>Catatan data:</b> {journey.note}</div><div class="st-mini-gallery"><div style={`--mini-image:url("${journey.image}")`}></div><div style={`--mini-image:url("${journey.image}")`}></div><div style={`--mini-image:url("${journey.image}")`}></div></div></main><aside class="st-side"><h3>Include</h3><ul>{journey.includes.map((item) => <li>{item}</li>)}</ul><h3>Exclude</h3><ul>{journey.excludes.map((item) => <li>{item}</li>)}</ul><p class="st-side-price">{journey.price}</p><a class="st-book st-detail-book" href="#booking" data-book-package={journey.id}>Book / Ask via WhatsApp</a></aside></div></section>)}
+<script>
+const bookingForm=document.querySelector("#st-booking-form");
+const packageSelect=document.querySelector("#st-package-select");
+const bookingFeedback=document.querySelector("#st-form-feedback");
+const waNumber=bookingForm?.getAttribute("data-whatsapp")||"6281246203185";
+const packageNames=JSON.parse(document.querySelector("#st-package-data")?.textContent||"[]");
+document.querySelectorAll(".st-detail-book").forEach((button)=>button.addEventListener("click",()=>{const packageId=button.getAttribute("data-book-package")||"";if(packageSelect)packageSelect.value=packageId;try{localStorage.setItem("st-selected-package",packageId);}catch(e){}}));
+if(packageSelect){try{const saved=localStorage.getItem("st-selected-package");if(saved&&Array.from(packageSelect.options).some((option)=>option.value===saved)){packageSelect.value=saved;localStorage.removeItem("st-selected-package");}}catch(e){}}
+bookingForm?.addEventListener("submit",(event)=>{event.preventDefault();if(!bookingForm.reportValidity())return;const formData=new FormData(bookingForm);const selected=packageNames.find((item)=>item.id===formData.get("package"));const packageName=selected?selected.title+" ("+selected.duration+")":(formData.get("package")==="custom"?"Perjalanan custom / konsultasi":"Belum dipilih");const msg=["Halo SUMBAWA TRIP, saya ingin mengajukan permintaan booking/konsultasi perjalanan.","","Nama: "+formData.get("name"),"WhatsApp: "+formData.get("phone"),"Paket: "+packageName,"Tanggal mulai: "+(formData.get("date")||"Fleksibel / belum ditentukan"),"Jumlah peserta: "+formData.get("pax"),"Jenis perjalanan: "+formData.get("tripType"),"Catatan: "+(formData.get("notes")||"-"),"","Mohon konfirmasi ketersediaan, harga final, itinerary, dan langkah selanjutnya. Saya memahami permintaan ini belum terkonfirmasi sampai tim SUMBAWA TRIP mengonfirmasi."].join("\n");const url="https://wa.me/"+waNumber+"?text="+encodeURIComponent(msg);if(bookingFeedback)bookingFeedback.textContent="Membuka WhatsApp dengan detail permintaan kamu…";window.open(url,"_blank","noopener,noreferrer");});
+const menuButton=document.querySelector(".st-menu-button");const links=document.querySelector(".st-links");
+menuButton?.addEventListener("click",()=>{const open=menuButton.getAttribute("aria-expanded")==="true";menuButton.setAttribute("aria-expanded",String(!open));links?.classList.toggle("is-open",!open);});
+links?.querySelectorAll("a").forEach((link)=>link.addEventListener("click",()=>{menuButton?.setAttribute("aria-expanded","false");links?.classList.remove("is-open");}));
+window.addEventListener("scroll",()=>document.querySelector(".st-nav")?.classList.toggle("is-scrolled",window.scrollY>32),{passive:true});
+</script>
+</body></html>
