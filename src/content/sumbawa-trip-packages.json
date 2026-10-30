@@ -1,0 +1,219 @@
+[
+  {
+    "id": "offroad",
+    "category": "4WD Adventure",
+    "duration": "2D1N",
+    "title": "Tambora Offroad Expedition",
+    "short": "Savana Doroncanga, lanskap Tambora, dan perjalanan 4WD untuk mengenal sisi liar Sumbawa.",
+    "route": "Doroncanga · Piong",
+    "image": "https://sumbawaholiday.com/wp-content/uploads/2023/01/cover-7.jpg?w=1024",
+    "imageAlt": "Lanskap Gunung Tambora sebagai referensi visual sementara",
+    "status": "Jalur Piong perlu konfirmasi operasional",
+    "highlights": [
+      "Savana Doroncanga",
+      "Pilihan jalur Doroncanga atau Piong",
+      "Petualangan 4WD"
+    ],
+    "itinerary": [
+      {
+        "day": "Hari 1",
+        "title": "Kedatangan & menuju Tambora",
+        "text": "Penjemputan dan perjalanan menuju kawasan Tambora. Titik kumpul, jam keberangkatan, dan akomodasi akan dikonfirmasi sesuai jalur pilihan."
+      },
+      {
+        "day": "Hari 2",
+        "title": "Offroad & transfer out",
+        "text": "Eksplorasi jalur sesuai kondisi lapangan, kemudian kembali ke titik akhir perjalanan."
+      }
+    ],
+    "includes": [
+      "Detail transportasi dan kendaraan 4WD menunggu konfirmasi operator",
+      "Rincian akomodasi dan konsumsi perlu ditetapkan"
+    ],
+    "excludes": [
+      "Tiket pesawat",
+      "Pengeluaran pribadi",
+      "Item yang belum dinyatakan dalam paket final"
+    ],
+    "note": "Durasi 2D1N mengikuti brief terbaru. Materi operasional lama memiliki rincian yang tidak sepenuhnya cocok dengan durasi ini; itinerary final harus disetujui sebelum dijual.",
+    "price": "Minta penawaran"
+  },
+  {
+    "id": "whale-shark",
+    "category": "Marine Experience",
+    "duration": "2D1N",
+    "title": "Whale Shark Experience",
+    "short": "Perjalanan dini hari dari Labuan Jambu menuju bagang di Teluk Saleh untuk mencari hiu paus.",
+    "route": "Labuan Jambu · Teluk Saleh",
+    "image": "https://sumbawaholiday.com/wp-content/uploads/2024/10/iklans.jpg?w=804",
+    "imageAlt": "Hiu paus di perairan Sumbawa sebagai referensi visual sementara",
+    "status": "Konfirmasi meeting point dan ketersediaan",
+    "highlights": [
+      "Teluk Saleh",
+      "Perahu masyarakat menuju bagang",
+      "Aktivitas snorkeling"
+    ],
+    "itinerary": [
+      {
+        "day": "Hari 1",
+        "title": "Bima → Labuan Jambu",
+        "text": "Penjemputan di Bandara Bima sesuai program, perjalanan menuju Labuan Jambu, check-in dan istirahat."
+      },
+      {
+        "day": "Hari 2",
+        "title": "Whale shark experience → Bima",
+        "text": "Berangkat dini hari, menuju bagang, aktivitas pengamatan/snorkeling sesuai kondisi alam, kembali ke Labuan Jambu lalu transfer keluar."
+      }
+    ],
+    "includes": [
+      "Perjalanan darat sesuai program final",
+      "Perahu menuju bagang",
+      "Aktivitas laut sesuai paket final"
+    ],
+    "excludes": [
+      "Tiket pesawat",
+      "Keperluan pribadi",
+      "Item di luar paket yang disepakati"
+    ],
+    "note": "Pertemuan dengan satwa liar tidak dapat dijamin. Jadwal dan aktivitas mengikuti kondisi laut serta arahan operator lokal.",
+    "price": "Harga akan dikonfirmasi"
+  },
+  {
+    "id": "pancasila",
+    "category": "Mountain Adventure",
+    "duration": "3D2N",
+    "title": "Tambora Trekking — Via Pancasila",
+    "short": "Pendakian Gunung Tambora melalui jalur Pancasila dengan persiapan dan pendampingan tim.",
+    "route": "Desa Pancasila · Gunung Tambora",
+    "image": "https://sumbawaholiday.com/wp-content/uploads/2023/01/cover-7.jpg?w=1024",
+    "imageAlt": "Lanskap Gunung Tambora sebagai referensi visual sementara",
+    "status": "Itinerary dan durasi perlu finalisasi",
+    "highlights": [
+      "Jalur Pancasila",
+      "Pendakian dan camp",
+      "Puncak Tambora 2.851 mdpl"
+    ],
+    "itinerary": [
+      {
+        "day": "Hari 1",
+        "title": "Meeting point → Pancasila",
+        "text": "Transfer menuju Desa Pancasila, persiapan pendakian, briefing, dan istirahat."
+      },
+      {
+        "day": "Hari 2",
+        "title": "Trekking & camp",
+        "text": "Pendakian menuju area camp sesuai izin, kondisi cuaca, dan keputusan guide."
+      },
+      {
+        "day": "Hari 3",
+        "title": "Pendakian lanjutan & transfer out",
+        "text": "Aktivitas pendakian dan turun sesuai itinerary final, kemudian transfer keluar."
+      }
+    ],
+    "includes": [
+      "Rincian guide, porter, logistik, izin, dan perlengkapan menunggu paket final"
+    ],
+    "excludes": [
+      "Transportasi menuju meeting point dari domisili",
+      "Pengeluaran pribadi",
+      "Item yang tidak tercantum di paket final"
+    ],
+    "note": "Dokumen sumber terdahulu memiliki durasi berbeda. Jam perjalanan, harga, dan rincian layanan perlu diverifikasi sebelum publikasi.",
+    "price": "Harga akan dikonfirmasi"
+  },
+  {
+    "id": "moyo",
+    "category": "Island Escape",
+    "duration": "3D2N",
+    "title": "Moyo Island Journey",
+    "short": "Jelajahi Labuan Aji, Mata Jitu, Diwu Mbai, dan spot snorkeling di sekitar Pulau Moyo.",
+    "route": "Sumbawa Besar · Pulau Moyo",
+    "image": "https://sumbawaholiday.com/wp-content/uploads/2022/12/46.jpg?w=1024",
+    "imageAlt": "Pulau Moyo sebagai referensi visual sementara",
+    "status": "Harga dan hotel perlu konfirmasi",
+    "highlights": [
+      "Air Terjun Mata Jitu",
+      "Labuan Aji",
+      "Snorkeling Takat Sagele/Poto Jarum"
+    ],
+    "itinerary": [
+      {
+        "day": "Hari 1",
+        "title": "Arrival & Sumbawa Besar",
+        "text": "Penjemputan, city tour sesuai waktu kedatangan, lalu transfer ke hotel."
+      },
+      {
+        "day": "Hari 2",
+        "title": "Moyo island adventure",
+        "text": "Perjalanan dengan boat ke Pulau Moyo, kunjungan ke Mata Jitu dan destinasi yang disepakati, lalu kembali sesuai kondisi lapangan."
+      },
+      {
+        "day": "Hari 3",
+        "title": "Moyo → Sumbawa Besar",
+        "text": "Sarapan, perjalanan kembali ke Sumbawa Besar dan transfer keluar menyesuaikan jadwal."
+      }
+    ],
+    "includes": [
+      "Transportasi lokal sesuai program",
+      "Private boat sesuai paket final",
+      "Guide dan aktivitas sesuai rincian yang disepakati"
+    ],
+    "excludes": [
+      "Tiket pesawat",
+      "Laundry dan pengeluaran pribadi",
+      "Item di luar paket final"
+    ],
+    "note": "Foto di prototipe ini adalah referensi sementara. Ganti dengan foto asli milik SUMBAWA TRIP sebelum peluncuran.",
+    "price": "Minta penawaran"
+  },
+  {
+    "id": "discovery",
+    "category": "Signature Journey",
+    "duration": "4D3N",
+    "title": "Sumbawa Discovery",
+    "short": "Rangkaian perjalanan Kenawa, Moyo, Mata Jitu, dan pengalaman hiu paus di Teluk Saleh.",
+    "route": "Lombok · Kenawa · Moyo · Teluk Saleh",
+    "image": "https://sumbawaholiday.com/wp-content/uploads/2022/12/46.jpg?w=1024",
+    "imageAlt": "Pulau-pulau Sumbawa sebagai referensi visual sementara",
+    "status": "Harga berdasarkan pax dan kelas hotel perlu dikonfirmasi",
+    "highlights": [
+      "Pulau Kenawa",
+      "Pulau Moyo & Mata Jitu",
+      "Whale shark experience"
+    ],
+    "itinerary": [
+      {
+        "day": "Hari 1",
+        "title": "Lombok → Kenawa → Sumbawa Besar",
+        "text": "Transfer menuju Pelabuhan Kayangan, menyeberang ke Poto Tano, kunjungan ke Kenawa, lalu menuju Sumbawa Besar."
+      },
+      {
+        "day": "Hari 2",
+        "title": "Moyo & Mata Jitu",
+        "text": "Perjalanan ke Pulau Moyo, snorkeling, kunjungan ke Mata Jitu, dan kembali sesuai program."
+      },
+      {
+        "day": "Hari 3",
+        "title": "Whale shark → Lombok",
+        "text": "Berangkat dini hari ke Teluk Saleh, aktivitas laut sesuai kondisi, lalu transfer kembali menuju Lombok."
+      },
+      {
+        "day": "Hari 4",
+        "title": "Transfer out",
+        "text": "Transfer menuju bandara menyesuaikan jadwal kepulangan."
+      }
+    ],
+    "includes": [
+      "Transportasi dan ferry sesuai program",
+      "Private boat sesuai itinerary",
+      "Aktivitas dan perlengkapan yang dinyatakan di paket final"
+    ],
+    "excludes": [
+      "Tiket pesawat dan airport tax",
+      "Pengeluaran pribadi",
+      "Item di luar paket final"
+    ],
+    "note": "Harga final memerlukan tabel berdasarkan jumlah peserta dan kelas hotel. Semua jam perjalanan perlu dikonfirmasi kembali.",
+    "price": "Harga akan dikonfirmasi"
+  }
+]
