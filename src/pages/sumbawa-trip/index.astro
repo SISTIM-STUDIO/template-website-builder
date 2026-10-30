@@ -60,7 +60,7 @@ const wa = (message: string) => `https://wa.me/${sumbawaBrand.whatsapp}?text=${e
 <section class="st-section st-booking-section" id="booking">
 <div class="st-booking-grid">
 <div class="st-booking-intro"><div class="st-eyebrow">Booking request</div><h2>Let's plan your<br/>Sumbawa journey.</h2><p>Isi informasi dasar perjalanan. Setelah menekan tombol, WhatsApp akan terbuka dengan pesan yang sudah disiapkan untuk tim SUMBAWA TRIP.</p><div class="st-booking-note"><strong>Perlu diketahui</strong><span>Permintaan ini belum menjadi booking terkonfirmasi. Tim kami akan memeriksa tanggal, ketersediaan, harga, dan detail layanan melalui WhatsApp.</span></div></div>
-<form class="st-booking-form" id="st-booking-form">
+<form class="st-booking-form" id="st-booking-form" data-whatsapp={sumbawaBrand.whatsapp}>
 <div class="st-form-row"><label>Nama lengkap<input name="name" autocomplete="name" required placeholder="Nama kamu"/></label><label>Nomor WhatsApp<input name="phone" type="tel" autocomplete="tel" required placeholder="08xxxxxxxxxx"/></label></div>
 <div class="st-form-row"><label>Pilih paket wisata<select name="package" id="st-package-select" required><option value="">Pilih paket</option>{journeys.map((journey) => <option value={journey.id}>{journey.title}</option>)}<option value="custom">Perjalanan custom / konsultasi</option></select></label><label>Tanggal mulai<input name="date" type="date" /></label></div>
 <div class="st-form-row"><label>Jumlah peserta<select name="pax" required><option value="">Pilih jumlah</option><option>1 orang</option><option>2 orang</option><option>3 orang</option><option>4 orang</option><option>5 orang</option><option>6–10 orang</option><option>11–20 orang</option><option>Lebih dari 20 orang</option></select></label><label>Jenis perjalanan<select name="tripType"><option>Private trip</option><option>Open trip</option><option>Honeymoon</option><option>Company gathering</option><option>Student expedition</option><option>Custom trip</option></select></label></div>
@@ -77,7 +77,7 @@ const wa = (message: string) => `https://wa.me/${sumbawaBrand.whatsapp}?text=${e
 const bookingForm=document.querySelector("#st-booking-form");
 const packageSelect=document.querySelector("#st-package-select");
 const bookingFeedback=document.querySelector("#st-form-feedback");
-const waNumber="6281246203185";
+const waNumber=bookingForm?.getAttribute("data-whatsapp")||"6281246203185";
 const packageNames=JSON.parse(document.querySelector("#st-package-data")?.textContent||"[]");
 document.querySelectorAll(".st-detail-book").forEach((button)=>button.addEventListener("click",()=>{const packageId=button.getAttribute("data-book-package")||"";if(packageSelect)packageSelect.value=packageId;try{localStorage.setItem("st-selected-package",packageId);}catch(e){}}));
 if(packageSelect){try{const saved=localStorage.getItem("st-selected-package");if(saved&&Array.from(packageSelect.options).some((option)=>option.value===saved)){packageSelect.value=saved;localStorage.removeItem("st-selected-package");}}catch(e){}}
