@@ -5,159 +5,63 @@ const wa = (message: string) => `https://wa.me/${sumbawaBrand.whatsapp}?text=${e
 ---
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="SUMBAWA TRIP — perjalanan autentik menjelajahi Tambora, Pulau Moyo, Teluk Saleh, dan destinasi Sumbawa." />
-    <meta name="theme-color" content="#0d1b18" />
-    <title>SUMBAWA TRIP — Your Gateway to Sumbawa Adventure</title>
-  </head>
-  <body class="st-page">
-    <a class="st-skip" href="#main">Lewati ke konten</a>
-    <header class="st-nav" id="top">
-      <a class="st-brand" href="#top" aria-label="SUMBAWA TRIP home">SUMBAWA <span>TRIP</span><small>{sumbawaBrand.tagline}</small></a>
-      <button class="st-menu-button" type="button" aria-expanded="false" aria-controls="st-links">Menu <span aria-hidden="true">☰</span></button>
-      <nav class="st-links" id="st-links" aria-label="Navigasi utama">
-        <a href="#experiences">Experiences</a>
-        <a href="#journeys">Journeys</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a class="st-nav-cta" href="#contact">Plan My Trip ↗</a>
-      </nav>
-    </header>
-    <main id="main">
-      <section class="st-hero">
-        <div class="st-hero-content">
-          <span class="st-eyebrow">Explore · Experience · Remember</span>
-          <h1>Discover<br /><em>Sumbawa.</em></h1>
-          <p>Dari Gunung Tambora, pulau-pulau kecil hingga pengalaman bertemu hiu paus di Teluk Saleh. Temukan perjalanan yang terasa autentik, luas, dan dekat dengan alam.</p>
-          <div class="st-actions">
-            <a class="st-btn st-btn-gold" href="#journeys">Explore Journeys <span>↗</span></a>
-            <a class="st-btn st-btn-ghost" href="#contact">Plan My Trip</a>
-          </div>
-          <div class="st-hero-meta"><span>LOCAL KNOWLEDGE</span><i></i><span>CURATED JOURNEYS</span><i></i><span>SUMBAWA, INDONESIA</span></div>
-        </div>
-        <div class="st-photo-note">Prototype imagery · replace with approved SUMBAWA TRIP photos before launch</div>
-      </section>
-
-      <section class="st-intro st-section">
-        <div class="st-kicker">The island, your way</div>
-        <div class="st-intro-grid">
-          <h2>Adventure feels<br /><em>different here.</em></h2>
-          <p>Sumbawa masih punya ruang untuk perjalanan yang terasa liar, luas, dan autentik. Mulai dari lanskap Tambora, kehidupan laut Teluk Saleh, hingga pulau dan air terjun yang dijelajahi bersama pemandu lokal.</p>
-        </div>
-      </section>
-
-      <section class="st-section st-experiences" id="experiences">
-        <div class="st-section-head">
-          <div><div class="st-kicker">Explore experience</div><h2>Find your way<br /><em>into Sumbawa.</em></h2></div>
-          <p>Empat pintu masuk utama untuk menjelajahi koleksi perjalanan SUMBAWA TRIP.</p>
-        </div>
-        <div class="st-experience-grid">
-          <a class="st-experience st-exp-tambora" href="#journey-offroad"><span>01 / VOLCANO</span><b>Tambora<br />Adventure</b><i>Discover the highlands ↗</i></a>
-          <a class="st-experience st-exp-whale" href="#journey-whale-shark"><span>02 / MARINE</span><b>Whale Shark<br />Experience</b><i>Into Saleh Bay ↗</i></a>
-          <a class="st-experience st-exp-moyo" href="#journey-moyo"><span>03 / ISLAND</span><b>Moyo Island<br />Escape</b><i>Explore the island ↗</i></a>
-          <a class="st-experience st-exp-discovery" href="#journey-discovery"><span>04 / DISCOVERY</span><b>Signature<br />Journeys</b><i>See all journeys ↗</i></a>
-        </div>
-      </section>
-
-      <section class="st-section st-journeys" id="journeys">
-        <div class="st-section-head">
-          <div><div class="st-kicker">Curated journeys</div><h2>Signature<br /><em>Journeys.</em></h2></div>
-          <p>Setiap perjalanan memiliki detail itinerary dan layanan. Harga atau informasi yang belum final ditandai agar tidak dianggap sebagai penawaran resmi.</p>
-        </div>
-        <div class="st-journey-grid">
-          {journeys.map((journey, index) => (
-            <article class="st-journey-card" id={`journey-${journey.id}`}>
-              <a class="st-journey-image" href={`#detail-${journey.id}`} style={`--journey-image: url("${journey.image}")`} aria-label={`Lihat detail ${journey.title}`}>
-                <span class="st-index">0{index + 1}</span><span class="st-duration">{journey.duration}</span>
-              </a>
-              <div class="st-journey-copy">
-                <div class="st-kicker">{journey.category}</div>
-                <h3>{journey.title}</h3>
-                <p>{journey.short}</p>
-                <div class="st-tags">{journey.route.split(" · ").map((tag) => <span>{tag}</span>)}</div>
-                <div class="st-card-bottom"><span>{journey.price}</span><a href={`#detail-${journey.id}`}>View journey ↗</a></div>
-                <small class="st-status">{journey.status}</small>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section class="st-about" id="about">
-        <div class="st-about-photo" role="img" aria-label="Lanskap Sumbawa, gambar referensi sementara"></div>
-        <div class="st-about-copy">
-          <div class="st-kicker">Why Sumbawa Trip</div><h2>Real places.<br /><em>Real journeys.</em></h2>
-          <p>Website ini mengutamakan foto destinasi asli, informasi yang bisa dikonfirmasi, dan alur konsultasi yang sederhana. Tidak ada harga atau janji layanan yang ditampilkan sebagai final jika belum disetujui.</p>
-          <div class="st-points">
-            <div><b>Authentic materials</b><span>Foto asli SUMBAWA TRIP menjadi prioritas visual final.</span></div>
-            <div><b>Verified information</b><span>Harga, itinerary, dan layanan ditinjau sebelum publikasi.</span></div>
-            <div><b>Easy to plan</b><span>Pengunjung bisa memilih paket dan mengirim pertanyaan melalui WhatsApp.</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="st-section" id="gallery">
-        <div class="st-section-head"><div><div class="st-kicker">Moments</div><h2>Moments of<br /><em>Sumbawa.</em></h2></div><p>Galeri ini masih menggunakan gambar referensi sementara. Foto final harus diganti dengan aset yang dimiliki atau telah mendapat izin.</p></div>
-        <div class="st-gallery">
-          <div class="st-gallery-item st-gallery-tambora"><span>Tambora</span></div>
-          <div class="st-gallery-item st-gallery-whale"><span>Teluk Saleh</span></div>
-          <div class="st-gallery-item st-gallery-moyo"><span>Pulau Moyo</span></div>
-          <div class="st-gallery-item st-gallery-coast"><span>Island escape</span></div>
-        </div>
-      </section>
-
-      <section class="st-details st-section" id="details">
-        <div class="st-section-head"><div><div class="st-kicker">Inside the journey</div><h2>Plan with<br /><em>confidence.</em></h2></div><p>Buka setiap paket untuk melihat gambaran itinerary, layanan, dan catatan yang masih perlu dikonfirmasi.</p></div>
-        <div class="st-detail-list">
-          {journeys.map((journey) => (
-            <details class="st-detail" id={`detail-${journey.id}`}>
-              <summary><span><small>{journey.category} · {journey.duration}</small><b>{journey.title}</b></span><i aria-hidden="true">+</i></summary>
-              <div class="st-detail-body">
-                <p class="st-detail-intro">{journey.short}</p>
-                <div class="st-detail-columns">
-                  <div><h4>Itinerary overview</h4><div class="st-timeline">{journey.itinerary.map((day) => <div class="st-day"><span>{day.day}</span><div><b>{day.title}</b><p>{day.text}</p></div></div>)}</div></div>
-                  <div class="st-detail-side">
-                    <h4>Journey information</h4><p class="st-price">{journey.price}</p><p class="st-pending">{journey.status}</p>
-                    <details class="st-nested"><summary>What's included</summary><ul>{journey.includes.map((item) => <li>{item}</li>)}</ul></details>
-                    <details class="st-nested"><summary>What's not included</summary><ul>{journey.excludes.map((item) => <li>{item}</li>)}</ul></details>
-                    <p class="st-note">{journey.note}</p>
-                    <a class="st-btn st-btn-green" href={wa(`Halo SUMBAWA TRIP, saya ingin konsultasi tentang paket ${journey.title} (${journey.duration}). Mohon informasi harga dan detail terbaru.`)} target="_blank" rel="noreferrer">Ask / Book This Journey ↗</a>
-                  </div>
-                </div>
-              </div>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <section class="st-contact" id="contact">
-        <div class="st-kicker">Your journey, your way</div><h2>Ready to explore<br /><em>Sumbawa?</em></h2>
-        <p>Private trip, honeymoon, company gathering, student expedition, atau rute khusus — konsultasikan perjalanan yang sesuai kebutuhanmu.</p>
-        <a class="st-btn st-btn-gold" href={wa("Halo SUMBAWA TRIP, saya ingin konsultasi perjalanan ke Sumbawa. Mohon rekomendasi paket yang sesuai.")} target="_blank" rel="noreferrer">Plan My Trip via WhatsApp ↗</a>
-        <small>Kontak prototipe: 0812-4620-3185 · Bima, Nusa Tenggara Barat. Konfirmasi kembali sebelum peluncuran.</small>
-      </section>
-    </main>
-    <footer class="st-footer">
-      <a class="st-brand" href="#top">SUMBAWA <span>TRIP</span><small>{sumbawaBrand.tagline}</small></a>
-      <div class="st-footer-links"><a href="#experiences">Experiences</a><a href="#journeys">Journeys</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
-      <p>© {new Date().getFullYear()} SUMBAWA TRIP · Website prototype</p>
-    </footer>
-    <script>
-      const menuButton = document.querySelector(".st-menu-button");
-      const links = document.querySelector(".st-links");
-      menuButton?.addEventListener("click", () => {
-        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-        menuButton.setAttribute("aria-expanded", String(!isOpen));
-        links?.classList.toggle("is-open", !isOpen);
-      });
-      links?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-        menuButton?.setAttribute("aria-expanded", "false");
-        links?.classList.remove("is-open");
-      }));
-      const nav = document.querySelector(".st-nav");
-      window.addEventListener("scroll", () => nav?.classList.toggle("is-scrolled", window.scrollY > 32), { passive: true });
-    </script>
-  </body>
-</html>
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="SUMBAWA TRIP — Your Gateway to Sumbawa Adventure. Jelajahi Tambora, Pulau Moyo, Teluk Saleh dan destinasi Sumbawa." />
+<meta name="theme-color" content="#0d1b18" />
+<title>SUMBAWA TRIP — Your Gateway to Sumbawa Adventure</title>
+</head>
+<body class="st-page">
+<a class="st-skip" href="#main">Lewati ke konten</a>
+<div class="st-home" id="top">
+<header class="st-nav" id="st-nav">
+<a class="st-brand" href="#top">SUMBAWA TRIP<small>{sumbawaBrand.tagline}</small></a>
+<button class="st-menu-button" type="button" aria-expanded="false" aria-controls="st-links">Menu ☰</button>
+<nav class="st-links" id="st-links" aria-label="Navigasi utama">
+<a href="#experiences">Experiences</a><a href="#journeys">Journeys</a><a href="#gallery">Gallery</a><a href="#about">About</a><a class="st-nav-cta" href="#contact">Plan My Trip</a>
+</nav>
+</header>
+<main id="main">
+<section class="st-hero">
+<div class="st-hero-content"><div class="st-eyebrow">Explore · Experience · Remember</div>
+<h1>Discover<br />Sumbawa.</h1>
+<p>Dari Gunung Tambora, pulau-pulau kecil hingga pengalaman bertemu hiu paus di Teluk Saleh. SUMBAWA TRIP mengajakmu menikmati Sumbawa melalui perjalanan yang nyata, personal, dan tidak terburu-buru.</p>
+<a class="st-btn st-btn-gold" href="#journeys">Explore Journeys</a><a class="st-btn st-btn-ghost" href="#contact">Plan My Trip</a>
+</div>
+</section>
+<section class="st-section st-intro"><div class="st-head"><div class="st-eyebrow">The island, your way</div><h2>Adventure feels different here.</h2><p>Sumbawa masih punya ruang untuk perjalanan yang terasa liar, luas, dan autentik. Kita mulai dari materi destinasi yang benar-benar tersedia, lalu mengembangkannya dengan data yang bisa diverifikasi.</p></div></section>
+<section class="st-section" id="experiences"><div class="st-head"><div class="st-eyebrow">Explore</div><h2>Experience Sumbawa</h2><p>Empat pintu masuk utama untuk menjelajahi koleksi perjalanan SUMBAWA TRIP.</p></div>
+<div class="st-experiences">
+<a class="st-exp st-exp-tambora" href="#journeys"><div class="st-label"><div class="st-eyebrow">Volcano</div><h3>Tambora Adventure</h3></div></a>
+<a class="st-exp st-exp-whale" href="#journeys"><div class="st-label"><div class="st-eyebrow">Marine</div><h3>Whale Shark</h3></div></a>
+<a class="st-exp st-exp-moyo" href="#journeys"><div class="st-label"><div class="st-eyebrow">Island</div><h3>Moyo Escape</h3><div class="st-placeholder-note">Foto asli Moyo belum tersedia pada aset prototipe ini.</div></div></a>
+<a class="st-exp st-exp-offroad" href="#journeys"><div class="st-label"><div class="st-eyebrow">4WD Adventure</div><h3>Tambora Offroad</h3></div></a>
+</div></section>
+<section class="st-section st-dark" id="journeys"><div class="st-head"><div class="st-eyebrow">Curated journeys</div><h2>Signature Journeys</h2><p>Pilih perjalanan untuk melihat gambaran itinerary, layanan, harga, dan informasi yang masih perlu dikonfirmasi.</p></div>
+<div class="st-packs">
+{journeys.slice(0,4).map((journey) => <article class="st-pack">
+<a class="st-pack-pic" href={`#trip-${journey.id}`} style={`--pack-image:url("${journey.image}")`} aria-label={`Lihat ${journey.title}`}></a>
+<div class="st-pack-copy"><small>{journey.duration} · {journey.category}</small><h3>{journey.title}</h3><p>{journey.short}</p>{journey.route.split(" · ").map((tag) => <span class="st-tag">{tag}</span>)}<p class="st-price">{journey.price}</p><a class="st-detail-link" href={`#trip-${journey.id}`}>View journey →</a></div>
+</article>)}
+</div>
+{journeys.slice(4).map((journey) => <div class="st-featured-pack"><article class="st-pack">
+<a class="st-pack-pic" href={`#trip-${journey.id}`} style={`--pack-image:url("${journey.image}")`} aria-label={`Lihat ${journey.title}`}></a>
+<div class="st-pack-copy"><small>{journey.duration} · {journey.category}</small><h3>{journey.title}</h3><p>{journey.short}</p>{journey.route.split(" · ").map((tag) => <span class="st-tag">{tag}</span>)}<p class="st-price">{journey.price}</p><a class="st-detail-link" href={`#trip-${journey.id}`}>View journey →</a></div>
+</article></div>)}
+</section>
+<section class="st-why" id="about"><div class="st-why-photo" role="img" aria-label="Lanskap Sumbawa, gambar referensi sementara"></div><div><div class="st-eyebrow">Why Sumbawa Trip</div><h2>Real places.<br />Real journeys.</h2><p>Homepage ini sengaja tidak mengisi kekosongan dengan materi generik. Foto yang sudah tersedia diprioritaskan; informasi yang belum ada diberi status pending atau diverifikasi sebelum dipublikasikan.</p>
+<div class="st-points"><div class="st-point"><b>Authentic Materials</b><span>Foto asli SUMBAWA TRIP menjadi basis visual utama setelah aset V5 dipindahkan.</span></div><div class="st-point"><b>Verified Information</b><span>Detail baru hanya ditambahkan jika sumbernya bisa diverifikasi.</span></div><div class="st-point"><b>Easy to Operate</b><span>Struktur disiapkan agar mudah dikembangkan menjadi website operasional.</span></div></div></div></section>
+<section class="st-section" id="gallery"><div class="st-head"><div class="st-eyebrow">Moments</div><h2>Moments of Sumbawa</h2><p>Galeri prototipe; aset foto V5 perlu dipindahkan ke repositori agar tidak bergantung pada tautan gambar pihak ketiga.</p></div>
+<div class="st-gallery"><div class="st-gallery-item st-g1" aria-label="Tambora"></div><div class="st-gallery-item st-g2" aria-label="Teluk Saleh"></div><div class="st-gallery-item st-g3" aria-label="Pulau Moyo"></div><div class="st-gallery-item st-g4" aria-label="Sumbawa"></div><div class="st-gallery-item st-g5" aria-label="Island escape"></div></div></section>
+<section class="st-contact" id="contact"><div class="st-eyebrow">Plan your journey</div><h2>Ready to explore<br />Sumbawa?</h2><p>Private trip, honeymoon, company gathering, student expedition, atau rute khusus — konsultasikan perjalanan yang sesuai kebutuhanmu.</p><a class="st-btn st-btn-gold" href={wa("Halo SUMBAWA TRIP, saya ingin konsultasi perjalanan ke Sumbawa. Mohon rekomendasi paket yang sesuai.")} target="_blank" rel="noreferrer">Plan My Trip via WhatsApp ↗</a></section>
+</main>
+<footer class="st-footer"><div class="st-footgrid"><div><a class="st-brand" href="#top">SUMBAWA TRIP<small>{sumbawaBrand.tagline}</small></a><p>Website prototype — SUMBAWA TRIP.</p></div><div><h4>Explore</h4><p><a href="#experiences">Experiences</a></p><p><a href="#journeys">Journeys</a></p><p><a href="#gallery">Gallery</a></p></div><div><h4>Plan</h4><p>Custom Trip</p><p>Booking consultation</p><p>Open Trip</p></div><div><h4>Contact</h4><p>Bima, Nusa Tenggara Barat</p><p>WhatsApp: 0812-4620-3185</p></div></div><div class="st-copyright">© {new Date().getFullYear()} SUMBAWA TRIP. Prototype only.</div></footer>
+</div>
+{journeys.map((journey) => <section class="st-detail-page" id={`trip-${journey.id}`}><div class="st-detail-nav"><a class="st-brand st-brand-dark" href="#top">SUMBAWA TRIP<small>{sumbawaBrand.tagline}</small></a><a class="st-back" href="#journeys">← Back to Journeys</a></div><div class="st-detail-hero" style={`--detail-image:url("${journey.image}")`}><div><div class="st-eyebrow">{journey.category} · {journey.duration}</div><h1>{journey.title}</h1><div class="st-meta">{journey.route.split(" · ").map((tag) => <span>{tag}</span>)}</div></div></div><div class="st-detail-body"><main><h2>{journey.title}</h2><p class="st-detail-intro">{journey.short}</p><div class="st-timeline">{journey.itinerary.map((day) => <div class="st-day"><b>{day.day} — {day.title}</b><p>{day.text}</p></div>)}</div><div class="st-note"><b>Catatan data:</b> {journey.note}</div><div class="st-mini-gallery"><div style={`--mini-image:url("${journey.image}")`}></div><div style={`--mini-image:url("${journey.image}")`}></div><div style={`--mini-image:url("${journey.image}")`}></div></div></main><aside class="st-side"><h3>Include</h3><ul>{journey.includes.map((item) => <li>{item}</li>)}</ul><h3>Exclude</h3><ul>{journey.excludes.map((item) => <li>{item}</li>)}</ul><p class="st-side-price">{journey.price}</p><a class="st-book" href={wa(`Halo SUMBAWA TRIP, saya ingin konsultasi tentang paket ${journey.title} (${journey.duration}). Mohon informasi harga dan detail terbaru.`)} target="_blank" rel="noreferrer">Ask / Book This Journey</a></aside></div></section>)}
+<script>
+const menuButton=document.querySelector(".st-menu-button");const links=document.querySelector(".st-links");
+menuButton?.addEventListener("click",()=>{const open=menuButton.getAttribute("aria-expanded")==="true";menuButton.setAttribute("aria-expanded",String(!open));links?.classList.toggle("is-open",!open);});
+links?.querySelectorAll("a").forEach((link)=>link.addEventListener("click",()=>{menuButton?.setAttribute("aria-expanded","false");links?.classList.remove("is-open");}));
+window.addEventListener("scroll",()=>document.querySelector(".st-nav")?.classList.toggle("is-scrolled",window.scrollY>32),{passive:true});
+</script>
+</body></html>
