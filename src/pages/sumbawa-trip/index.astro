@@ -21,7 +21,7 @@ const wa = (message: string) => `https://wa.me/${sumbawaBrand.whatsapp}?text=${e
 <a class="st-brand" href="#top">SUMBAWA TRIP<small>{sumbawaBrand.tagline}</small></a>
 <button class="st-menu-button" type="button" aria-expanded="false" aria-controls="st-links">Menu ☰</button>
 <nav class="st-links" id="st-links" aria-label="Navigasi utama">
-<a href="#experiences">Experiences</a><a href="#journeys">Journeys</a><a href="#gallery">Gallery</a><a href="#about">About</a><a class="st-nav-cta" href="#contact">Plan My Trip</a>
+<a href="#experiences">Experiences</a><a href="#journeys">Journeys</a><a href="#gallery">Gallery</a><a href="#about">About</a><a class="st-nav-cta" href="#booking">Plan My Trip</a>
 </nav>
 </header>
 <main id="main">
@@ -29,7 +29,7 @@ const wa = (message: string) => `https://wa.me/${sumbawaBrand.whatsapp}?text=${e
 <div class="st-hero-content"><div class="st-eyebrow">Explore · Experience · Remember</div>
 <h1>Discover<br />Sumbawa.</h1>
 <p>Dari Gunung Tambora, pulau-pulau kecil hingga pengalaman bertemu hiu paus di Teluk Saleh. SUMBAWA TRIP mengajakmu menikmati Sumbawa melalui perjalanan yang nyata, personal, dan tidak terburu-buru.</p>
-<a class="st-btn st-btn-gold" href="#journeys">Explore Journeys</a><a class="st-btn st-btn-ghost" href="#contact">Plan My Trip</a>
+<a class="st-btn st-btn-gold" href="#journeys">Explore Journeys</a><a class="st-btn st-btn-ghost" href="#booking">Plan My Trip</a>
 </div>
 </section>
 <section class="st-section st-intro"><div class="st-head"><div class="st-eyebrow">The island, your way</div><h2>Adventure feels different here.</h2><p>Sumbawa masih punya ruang untuk perjalanan yang terasa liar, luas, dan autentik. Kita mulai dari materi destinasi yang benar-benar tersedia, lalu mengembangkannya dengan data yang bisa diverifikasi.</p></div></section>
@@ -79,7 +79,7 @@ const packageSelect=document.querySelector("#st-package-select");
 const bookingFeedback=document.querySelector("#st-form-feedback");
 const waNumber="6281246203185";
 const packageNames=JSON.parse(document.querySelector("#st-package-data")?.textContent||"[]");
-document.querySelectorAll(".st-detail-book").forEach((button)=>button.addEventListener("click",()=>{try{localStorage.setItem("st-selected-package",button.getAttribute("data-book-package")||"");}catch(e){}}));
+document.querySelectorAll(".st-detail-book").forEach((button)=>button.addEventListener("click",()=>{const packageId=button.getAttribute("data-book-package")||"";if(packageSelect)packageSelect.value=packageId;try{localStorage.setItem("st-selected-package",packageId);}catch(e){}}));
 if(packageSelect){try{const saved=localStorage.getItem("st-selected-package");if(saved&&Array.from(packageSelect.options).some((option)=>option.value===saved)){packageSelect.value=saved;localStorage.removeItem("st-selected-package");}}catch(e){}}
 bookingForm?.addEventListener("submit",(event)=>{event.preventDefault();if(!bookingForm.reportValidity())return;const formData=new FormData(bookingForm);const selected=packageNames.find((item)=>item.id===formData.get("package"));const packageName=selected?selected.title+" ("+selected.duration+")":(formData.get("package")==="custom"?"Perjalanan custom / konsultasi":"Belum dipilih");const msg=["Halo SUMBAWA TRIP, saya ingin mengajukan permintaan booking/konsultasi perjalanan.","","Nama: "+formData.get("name"),"WhatsApp: "+formData.get("phone"),"Paket: "+packageName,"Tanggal mulai: "+(formData.get("date")||"Fleksibel / belum ditentukan"),"Jumlah peserta: "+formData.get("pax"),"Jenis perjalanan: "+formData.get("tripType"),"Catatan: "+(formData.get("notes")||"-"),"","Mohon konfirmasi ketersediaan, harga final, itinerary, dan langkah selanjutnya. Saya memahami permintaan ini belum terkonfirmasi sampai tim SUMBAWA TRIP mengonfirmasi."].join("\n");const url="https://wa.me/"+waNumber+"?text="+encodeURIComponent(msg);if(bookingFeedback)bookingFeedback.textContent="Membuka WhatsApp dengan detail permintaan kamu…";window.open(url,"_blank","noopener,noreferrer");});
 const menuButton=document.querySelector(".st-menu-button");const links=document.querySelector(".st-links");
